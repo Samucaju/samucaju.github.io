@@ -13,7 +13,7 @@
         th, td {
             border: 1px solid black;
             padding: 8px;
-            text-align: left;
+            text-align: center;
         }
         th {
             background-color: #f2f2f2;
@@ -29,7 +29,7 @@
         }
         img {
             max-width: 100%;
-            height: auto;
+            height: 200px;
         }
         .product-button {
             background-color: #4CAF50;
@@ -44,32 +44,32 @@
             cursor: pointer;
         }
         #product-details-modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #f2f2f2;
-    padding: 20px;
-    border: 1px solid black;
-    border-radius: 4px;
-    z-index: 1000;
-    max-width: 80%;
-    width: 800px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f2f2f2;
+            padding: 20px;
+            border: 1px solid black;
+            border-radius: 4px;
+            z-index: 1000;
+            max-width: 80%;
+            width: 800px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-#product-details-modal h2 {
-    margin-top: 0;
-}
+        #product-details-modal h2 {
+            margin-top: 0;
+        }
 
-#product-details-modal button {
-    margin-top: 16px;
-}
+        #product-details-modal button {
+            margin-top: 16px;
+        }
 
-#close-modal-button {
-    float: right;
-    margin-bottom: 0;
-}
+        #close-modal-button {
+            float: right;
+            margin-bottom: 0;
+        }
     </style>
 </head>
 <body>
@@ -83,15 +83,15 @@
             <tr>
                 <td><img src="https://images.tcdn.com.br/img/img_prod/740836/mouse_sem_fio_dell_wm126_wireless_1000dpi_preto_11761_1_06f307fa6345ae6f62a4496d48a1f668.jpg" alt="Produto 1"></td>
                 <td>1</td>
-                <td>Mouse Laser com fio</td>
+                <td>Mouse Bluetooth Dell</td>
                 <td>5</td>
-                <td>R$ 179,00</td>
+                <td>R$ 48,00</td>
                 <td><button class="product-button" onclick="showProductDetails(1)">Ver detalhes</button></td>
             </tr>
             <tr>
                 <td><img src="https://i.zst.com.br/thumbs/12/17/39/1278713375.jpg" alt="Produto 2"></td>
                 <td>2</td>
-                <td>Mouse Bluetooth Dell</td>
+                <td>Mouse Razer</td>
                 <td>6</td>
                 <td>R$ 338,00</td>
                 <td><button class="product-button" onclick="showProductDetails(2)">Ver detalhes</button></td>
@@ -99,9 +99,9 @@
             <tr>
                 <td><img src="https://i.zst.com.br/thumbs/12/2/37/722106356.jpg" alt="Produto 3"></td>
                 <td>3</td>
-                <td>Mouse óptico usb preto</td>
+                <td>Mouse HyperX</td>
                 <td>3</td>
-                <td>R$ 48,30</td>
+                <td>R$ 130,30</td>
                 <td><button class="product-button" onclick="showProductDetails(3)">Ver detalhes</button></td>
             </tr>
         </tbody>
@@ -110,46 +110,48 @@
     <div id="product-details-modal" style="display: none;">
         <h2 id="product-title"></h2>
         <h3>Características do Produto</h3>
-        <ul>
-            <li><strong>Sensor óptico preciso:</strong> 1.600 DPI permite que você trabalhe na maioria das superfícies</li>
-            <li><strong>Configuração USB:</strong> Rápida e fácil com cabo de 1,5m</li>
-            <li><strong>Design:</strong> Ambidestro, produzido para caber de forma natural e perfeita na palma da sua mão</li>
-            <li><strong>Botões:</strong> Três botões integrados</li>
-            <li><strong>Compatibilidade:</strong> Ampla compatibilidade: Windows e Mac</li>
-        </ul>
-        <h3>Avaliação do produto</h3>
-        <dl>
-            <dt>José Aparecido ☆☆☆☆☆</dt>
-            <dd>Excelente mouse, fácil de usar, recomendo.</dd>
-        </dl>
+        <div id="product-details"></div>
         <button id="close-modal-button">Fechar</button>
     </div>
-    
+
     <script>
+        const products = [
+            {
+                id: 1,
+                title: "Mouse Bluetooth Dell",
+                details: "Sensor óptico preciso: 1.600 DPI permite que você trabalhe na maioria das superfícies. Configuração USB: Rápida e fácil com cabo de 1,5m. Design: Ambidestro, produzido para caber de forma natural e perfeita na palma da sua mão. Botões: Três botões integrados. Compatibilidade: Ampla compatibilidade: Windows e Mac."
+            },
+            {
+                id: 2,
+                title: "Mouse Razer",
+                details: "Details for product 2 here."
+            },
+            {
+                id: 3,
+                title: "Mouse HyperX",
+                details: "Details for product 3 here."
+            }
+            // Add more products here
+        ];
+
         function showProductDetails(productId) {
             const productDetailsModal = document.getElementById("product-details-modal");
             const productTitle = document.getElementById("product-title");
-    
-            // Set product title and other details here based on productId
-            switch (productId) {
-                case 1:
-                    productTitle.textContent = "Mouse Laser com fio";
-                    break;
-                case 2:
-                    productTitle.textContent = "Mouse Bluetooth Dell";
-                    break;
-                case 3:
-                    productTitle.textContent = "Mouse óptico usb preto";
-                    break;
-                default:
-                    productTitle.textContent = "";
+            const productDetails = document.getElementById("product-details");
+
+            const product = products.find(p => p.id === productId);
+
+            if (product) {
+                productTitle.textContent = product.title;
+                productDetails.textContent = product.details;
+                productDetailsModal.style.display = "block";
             }
-    
-            productDetailsModal.style.display = "block";
         }
-    
+
         document.getElementById("close-modal-button").addEventListener("click", function() {
             const productDetailsModal = document.getElementById("product-details-modal");
             productDetailsModal.style.display = "none";
         });
     </script>
+</body>
+</html>
