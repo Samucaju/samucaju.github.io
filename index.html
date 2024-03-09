@@ -3,155 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Produtos</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin-top: 16px;
-        }
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: center;
-        }
-        th {
-            background-color: #f2f2f2;
-            font-weight: bold;
-        }
-        td:first-child {
-            margin-top: 0;
-        }
-        .header-row td {
-            padding-top: 16px;
-            padding-bottom: 16px;
-            vertical-align: middle;
-        }
-        img {
-            max-width: 100%;
-            height: 200px;
-        }
-        .product-button {
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-        }
-        #product-details-modal {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #f2f2f2;
-            padding: 20px;
-            border: 1px solid black;
-            border-radius: 4px;
-            z-index: 1000;
-            max-width: 80%;
-            width: 800px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        #product-details-modal h2 {
-            margin-top: 0;
-        }
-
-        #product-details-modal button {
-            margin-top: 16px;
-        }
-
-        #close-modal-button {
-            float: right;
-            margin-bottom: 0;
-        }
-    </style>
+    <meta name="description" content="Curriculum Vitae of a software engineer with expertise in HTML, Java, and visual arts.">
+    <meta name="keywords" content="software engineer, HTML, Java, visual arts, curriculum vitae">
+    <meta name="author" content="Your Name">
+    <title>Curriculum Vitae - Your Name</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Catálogo de Produtos</h1>
-    <table>
-        <thead>
-            <tr class="header-row">
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img src="https://images.tcdn.com.br/img/img_prod/740836/mouse_sem_fio_dell_wm126_wireless_1000dpi_preto_11761_1_06f307fa6345ae6f62a4496d48a1f668.jpg" alt="Produto 1"></td>
-                <td>1</td>
-                <td>Mouse Bluetooth Dell</td>
-                <td>5</td>
-                <td>R$ 48,00</td>
-                <td><button class="product-button" onclick="showProductDetails(1)">Ver detalhes</button></td>
-            </tr>
-            <tr>
-                <td><img src="https://i.zst.com.br/thumbs/12/17/39/1278713375.jpg" alt="Produto 2"></td>
-                <td>2</td>
-                <td>Mouse Razer</td>
-                <td>6</td>
-                <td>R$ 338,00</td>
-                <td><button class="product-button" onclick="showProductDetails(2)">Ver detalhes</button></td>
-            </tr>
-            <tr>
-                <td><img src="https://i.zst.com.br/thumbs/12/2/37/722106356.jpg" alt="Produto 3"></td>
-                <td>3</td>
-                <td>Mouse HyperX</td>
-                <td>3</td>
-                <td>R$ 130,30</td>
-                <td><button class="product-button" onclick="showProductDetails(3)">Ver detalhes</button></td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div id="product-details-modal" style="display: none;">
-        <h2 id="product-title"></h2>
-        <h3>Características do Produto</h3>
-        <div id="product-details"></div>
-        <button id="close-modal-button">Fechar</button>
-    </div>
-
-    <script>
-        const products = [
-            {
-                id: 1,
-                title: "Mouse Bluetooth Dell",
-                details: "Sensor óptico preciso: 1.600 DPI permite que você trabalhe na maioria das superfícies. Configuração USB: Rápida e fácil com cabo de 1,5m. Design: Ambidestro, produzido para caber de forma natural e perfeita na palma da sua mão. Botões: Três botões integrados. Compatibilidade: Ampla compatibilidade: Windows e Mac."
-            },
-            {
-                id: 2,
-                title: "Mouse Razer",
-                details: "Details for product 2 here."
-            },
-            {
-                id: 3,
-                title: "Mouse HyperX",
-                details: "Details for product 3 here."
-            }
-            // Add more products here
-        ];
-
-        function showProductDetails(productId) {
-            const productDetailsModal = document.getElementById("product-details-modal");
-            const productTitle = document.getElementById("product-title");
-            const productDetails = document.getElementById("product-details");
-
-            const product = products.find(p => p.id === productId);
-
-            if (product) {
-                productTitle.textContent = product.title;
-                productDetails.textContent = product.details;
-                productDetailsModal.style.display = "block";
-            }
-        }
-
-        document.getElementById("close-modal-button").addEventListener("click", function() {
-            const productDetailsModal = document.getElementById("product-details-modal");
-            productDetailsModal.style.display = "none";
-        });
-    </script>
+    <header>
+        <div class="profile-picture">
+            <img src="C:\Users\Samuel\Downloads\IMG_2889.jpg" alt="Samuel Jr">
+        </div>
+        <div class="intro">
+            <h1>Welcome to My Curriculum Vitae</h1>
+            <p>I'm a software engineer with expertise in HTML, Java, and visual arts.</p>
+        </div>
+         <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="page1.html">Page 1</a></li>
+                <li><a href="page2.html">Page 2</a></li>
+            </ul>
+        </nav>
+        <div class="intro">
+            <h1>Welcome to My Curriculum Vitae</h1>
+            <p>I'm a software engineer with expertise in HTML, Java, and visual arts.</p>
+        </div>
+    </header>
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                Hello, I'm a software engineer with expertise in HTML, Java, and visual arts.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, lectus eget bibendum volutpat, tellus nisi volutpat dolor, eu volutpat dui massa in lectus. Donec auctor, lectus eget bibendum volutpat, tellus nisi volutpat dolor, eu volutpat dui massa in lectus.
+            </p>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <h3>Technical Skills</h3>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Java</li>
+            </ul>
+            <h3>Visual Arts Skills</h3>
+            <ul>
+                <li>Digital Art</li>
+                <li>Traditional Art</li>
+                <li>Graphic Design</li>
+            </ul>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <article>
+                <h3>Project 1</h3>
+                <img src="path/to/image.jpg" alt="A description of Project 1's image">
+                <p>
+                    Brief description of Project 1.
+                </p>
+            </article>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>
+                Email: your.email@example.com
+            </p>
+            <p>
+                Phone: (123) 456-7890
+            </p>
+            <form action="mailto:your.email@example.com" method="post" enctype="text/plain">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Your Name. All rights reserved.</p>
+    </footer>
 </body>
 </html>
