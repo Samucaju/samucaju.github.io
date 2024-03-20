@@ -1,94 +1,241 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Curriculum Vitae of a software engineer with expertise in HTML, CSS, and visual arts.">
-    <meta name="keywords" content="software engineer, HTML, Java, visual arts, curriculum vitae">
-    <meta name="author" content="Samuel">
-    <title>Curriculum Vitae - Samuel</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Inscrição de Aluno</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+      
+      h1 {
+        text-align: center;
+        padding: 20px;
+        background-color: #333;
+        color: #fff;
+        margin-bottom: 20px;
+      }
+      
+      form {
+        width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      
+      input[type="text"],
+      input[type="date"],
+      input[type="tel"],
+      input[type="email"],
+      input[type="number"],
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      
+      input[type="submit"],
+      input[type="reset"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      input[type="submit"]:hover,
+      input[type="reset"]:hover {
+        background-color: #555;
+      }
+      
+      select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 11.812 5.657 8 4.293 9.343 9.293 16.09l1.414-1.414z'/></svg>");
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 12px;
+        padding-right: 30px;
+      }
+      </style>
 </head>
 <body>
-    <header>
-        <div class="profile-picture">
-            <img src="https://i.postimg.cc/wvxdwpML/IMG-2889.jpg" alt="Samuel Jr">
-        </div>
-        <div class="intro">
-            <h1>Welcome to My Curriculum Vitae</h1>
-            <p>I'm a software engineer with expertise in HTML, CSS, and visual arts.</p>
-        </div>
-         <nav>
-            <ul>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projetos</a></li>
-                <li><a href="#contact">Contato</a></li>
-                <li><a href="page1.html">Linkedin</a></li>
-                <li><a href="page2.html">Github</a></li>
-            </ul>
-        </nav>
-        <div class="intro">
-            <h1>Welcome to My Curriculum Vitae</h1>
-            <p>I'm a software engineer with expertise in HTML, CSS, and visual arts.</p>
-        </div>
-    </header>
-    <main>
-        <section id="about">
-            <h2>Sobre</h2>
+    <h1>Cursos Disponíveis</h1>
+    <nav>
+    <form action="https://65fa2ee73909a9a65b1a017f.mockapi.io/Cursos" method="post">
+        <fieldset>
+            <legend>Inscrição de Aluno</legend>
             <p>
-                Hello, I'm a software engineer with expertise in HTML, Java, and visual arts.
+                <label for="nomeAluno">Nome do Aluno:</label>
+                <input type="text" name="nomeAluno" id="nomeAluno" required>
             </p>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, lectus eget bibendum volutpat, tellus nisi volutpat dolor, eu volutpat dui massa in lectus. Donec auctor, lectus eget bibendum volutpat, tellus nisi volutpat dolor, eu volutpat dui massa in lectus.
-            </p>
-        </section>
-        <section id="skills">
-            <h2>Skills</h2>
-            <h3>Technical Skills</h3>
-            <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-            </ul>
-            <h3>Visual Arts Skills</h3>
-            <ul>
-                <li>Digital Art</li>
-                <li>Traditional Art</li>
-                <li>Graphic Design</li>
-            </ul>
-        </section>
-        <section id="projects">
-            <h2>Projetos</h2>
-            <article>
-                <h3>Projeto 1</h3>
-                <img src="path/to/image.jpg" alt="A description of Project 1's image">
-                <p>
-                    Brief description of Project 1.
-                </p>
-            </article>
-        </section>
-        <section id="contact">
-            <h2>Contato</h2>
-            <p>
-                Email: your.email@example.com
+                <label for="enderecoAluno">Endereço:</label>
+                <input type="text" name="enderecoAluno" id="enderecoAluno" required>
             </p>
             <p>
-                Telefone: (xx) xxxxx-xxxx
+                <label for="numeroResidenciaAluno">Número:</label>
+                <input type="number" name="numeroResidenciaAluno" id="numeroResidenciaAluno" required min="0" max="9999" step="1">
             </p>
-            <form action="mailto:your.email@example.com" method="post" enctype="text/plain">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Mensagem:</label>
-                <textarea id="message" name="message" rows="4" cols="50" required></textarea>
-                <button type="submit">Enviar Mensagem</button>
-            </form>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 Samuel. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+            <p>
+                <label for="cpfAluno">CPF:</label>
+                <input type="text" name="cpfAluno" id="cpfAluno" required pattern="^[0-9]{11}$" title="CPF deve conter 11 dígitos">
+            </p>
+            <p>
+                <label for="celularAluno">Celular:</label>
+                <input type="tel" name="celularAluno" id="celularAluno" required pattern="^[(][0-9]{2}[)] [0-9]{4}-[0-9]{4}$" title="Celular deve estar no formato (xx) xxxxx-xxxx">
+            </p>
+            <p>
+                <label for="emailAluno">E-mail:</label>
+                <input type="email" name="emailAluno" id="emailAluno" required>
+            </p>
+            <p>
+                <label for="corAluno">Cor:</label>
+                <select name="corAluno" id="corAluno" required>
+                    <option value="">Selecione uma opção</option>
+                    <option value="Branca">Branca</option>
+                    <option value="Preta">Preta</option>
+                    <option value="Parda">Parda</option>
+                    <option value="Amarela">Amarela</option>
+                    <option value="Indígena">Indígena</option>
+                </select>
+            </p>
+            <p>
+                <label for="bairroAluno">Bairro:</label>
+                <input type="text" name="bairroAluno" id="bairroAluno">
+            </p>
+            <p>
+                <label for="cidadeAluno">Cidade:</label>
+                <input type="text" name="cidadeAluno" id="cidadeAluno">
+            </p>
+            <p>
+                <label for="cepAluno">CEP:</label>
+                <input type="text" name="cepAluno" id="cepAluno" pattern="^[0-9]{5}-[0-9]{3}$" title="CEP deve estar no formato xxxxx-xxx">
+            </p>
+            <p>
+                <label for="complementoAluno">Complemento:</label>
+                <input type="text" name="complementoAluno" id="complementoAluno">
+            </p>
+            <p>
+                <label for="estadoAluno">Estado:</label>
+                <input type="text" name="estadoAluno" id="estadoAluno" maxlength="2">
+            </p>
+            <p>
+                <label for="telefoneAluno">Telefone:</label>
+                <input type="tel" name="telefoneAluno" id="telefoneAluno" pattern="^[(][0-9]{2}[)] [0-9]{4}-[0-9]{4}$" title="Telefone deve estar no formato (xx) xxxxx-xxxx">
+            </p>
+            <p>
+                <label for="nomePai">Nome do Pai:</label>
+                <input type="text" name="nomePai" id="nomePai">
+            </p>
+            <p>
+                <label for="dataNascimentoPai">Data de Nascimento:</label>
+                <input type="date" name="dataNascimentoPai" id="dataNascimentoPai">
+            </p>
+            <p>
+                <label for="naturalidadePai">Naturalidade:</label>
+                <input type="text" name="naturalidadePai" id="naturalidadePai">
+            </p>
+            <p>
+                <label for="instrucaoPai">Instrução:</label>
+                <input type="text" name="instrucaoPai" id="instrucaoPai">
+            </p>
+            <p>
+                <label for="profissaoPai">Profissão:</label>
+                <input type="text" name="profissaoPai" id="profissaoPai">
+            </p>
+            <p>
+                <label for="celularPai">Celular:</label>
+                <input type="tel" name="celularPai" id="celularPai" pattern="^[(][0-9]{2}[)] [0-9]{4}-[0-9]{4}$" title="Celular deve estar no formato (xx) xxxxx-xxxx">
+            </p>
+            <p>
+                <label for="emailPai">E-mail:</label>
+                <input type="email" name="emailPai" id="emailPai">
+            </p>
+            <p>
+                <label for="cpfPai">CPF:</label>
+                <input type="text" name="cpfPai" id="cpfPai" pattern="^[0-9]{11}$" title="CPF deve conter 11 dígitos">
+            </p>
+            <p>
+                <label for="responsavelFinanceiroPai">Responsável financeiro:</label>
+                <input type="checkbox" name="responsavelFinanceiroPai" id="responsavelFinanceiroPai" value="Pai">
+            </p>
+            <p>
+                <label for="nomeMae">Nome da Mãe:</label>
+                <input type="text" name="nomeMae" id="nomeMae">
+            </p>
+            <p>
+                <label for="dataNascimentoMae">Data de Nascimento:</label>
+                <input type="date" name="dataNascimentoMae" id="dataNascimentoMae">
+            </p>
+            <p>
+                <label for="naturalidadeMae">Naturalidade:</label>
+                <input type="text" name="naturalidadeMae" id="naturalidadeMae">
+            </p>
+            <p>
+                <label for="instrucaoMae">Instrução:</label>
+                <input type="text" name="instrucaoMae" id="instrucaoMae">
+            </p>
+            <p>
+                <label for="profissaoMae">Profissão:</label>
+                <input type="text" name="profissaoMae" id="profissaoMae">
+            </p>
+            <p>
+                <label for="celularMae">Celular:</label><input type="tel" name="celularMae" id="celularMae" pattern="^[(][0-9]{2}[)] [0-9]{4}-[0-9]{4}$" title="Celular deve estar no formato (xx) xxxxx-xxxx">
+            </p>
+            <p>
+                <label for="emailMae">E-mail:</label>
+                <input type="email" name="emailMae" id="emailMae">
+            </p>
+            <p>
+                <label for="cpfMae">CPF:</label>
+                <input type="text" name="cpfMae" id="cpfMae" pattern="^[0-9]{11}$" title="CPF deve conter 11 dígitos">
+            </p>
+            <p>
+                <label for="responsavelFinanceiroMae">Responsável financeiro:</label>
+                <input type="checkbox" name="responsavelFinanceiroMae" id="responsavelFinanceiroMae" value="Mae">
+            </p>
+            <p>
+                <label for="curso">Curso:</label>
+                <select name="curso" id="curso">
+                    <option value="curso1">Curso 1: Introdução a HTML - R$600,00</option>
+                    <option value="curso2">Curso 2: Intermediário HTML - R$1.000,00</option>
+                    <option value="curso3">Curso 3: Avançado HTML - R$1.450,00</option>
+                </select>
+            </p>    
+            <p>
+                <label for="dataIngressoCurso">Data de Ingresso:</label>
+                <input type="date" name="dataIngressoCurso" id="dataIngressoCurso">
+            </p>
+            <p>
+                <label for="formaPagamentoCurso">Forma de Pagamento:</label>
+                <select name="formaPagamentoCurso" id="formaPagamentoCurso">
+                    <option value="">Selecione uma forma de pagamento</option>
+                    <option value="1x">1x</option>
+                    <option value="2x">2x</option>
+                    <option value="3x">3x</option>
+                    <option value="pix">Pix</option>
+                </select>
+            </p>
+            <p>
+                <button type="submit">Enviar</button>
+                <button type="reset">Limpar</button>
+            </p>
